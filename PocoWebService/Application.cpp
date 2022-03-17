@@ -23,7 +23,6 @@ public:
 protected:
 	void initialize(Application& self)
 	{
-		//loadConfiguration(); // load default configuration files, if present
 		ServerApplication::initialize(self);
 	}
 
