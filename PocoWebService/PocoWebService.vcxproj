@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="UserJWTokens.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
@@ -161,6 +162,9 @@
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoUtil64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJSON64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64d.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UserJWTokens.h" />
   </ItemGroup>
   <Target Name="DeployPocoDlls" AfterTargets="Build">
     <Copy SourceFiles="@(PocoReleaseDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Release' And '$(Platform)' == 'x64' " />

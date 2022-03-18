@@ -6,6 +6,8 @@
 #include "Poco/Util/ServerApplication.h"
 #include "Poco/Util/OptionSet.h"
 
+#include "UserJWTokens.h"
+
 using Poco::Util::ServerApplication;
 using Poco::Util::OptionSet;
 
@@ -33,14 +35,18 @@ protected:
 
 	void defineOptions(OptionSet& options)
 	{
-		ServerApplication::defineOptions(options);
-
-		
+		ServerApplication::defineOptions(options);		
 	}
 
 	int main(const ArgVec& args)
 	{
-		std::cout << "Poco web-service started..." << std::endl;
+		std::cout << "Poco web-service started" << std::endl;
+
+		UserJWTokens::initialize();
+		UserJWTokens::initialize();
+		UserJWTokens::initialize();
+
+		auto p = UserJWTokens::instance();
 
 		waitForTerminationRequest();
 
