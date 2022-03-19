@@ -43,10 +43,6 @@ protected:
 		std::cout << "Poco web-service started" << std::endl;
 
 		UserJWTokens::initialize();
-		UserJWTokens::initialize();
-		UserJWTokens::initialize();
-
-		auto p = UserJWTokens::instance();
 
 		waitForTerminationRequest();
 

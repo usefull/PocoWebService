@@ -164,6 +164,7 @@
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64d.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UIDGenerator.h" />
     <ClInclude Include="UserJWTokens.h" />
   </ItemGroup>
   <Target Name="DeployPocoDlls" AfterTargets="Build">
