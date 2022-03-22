@@ -15,10 +15,10 @@ using Poco::Timestamp;
 using Poco::DateTimeFormat;
 using Poco::DateTimeFormatter;
 
-class HomeRequestHanler : public BaseRequestHandler
+class HomeRequestHandler : public BaseRequestHandler
 {
 public:
-	HomeRequestHanler()
+	HomeRequestHandler()
 	{			
 	}
 

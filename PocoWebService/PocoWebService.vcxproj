@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -165,9 +165,10 @@
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64d.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AuthRequestHandler.h" />
     <ClInclude Include="BaseRequestHandler.h" />
     <ClInclude Include="HandlerFactory.h" />
-    <ClInclude Include="HomeRequestHanler.h" />
+    <ClInclude Include="HomeRequestHandler.h" />
     <ClInclude Include="NotFoundHandler.h" />
   </ItemGroup>
   <Target Name="DeployPocoDlls" AfterTargets="Build">
