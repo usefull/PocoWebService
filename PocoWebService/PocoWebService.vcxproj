@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,7 +146,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="UserJWTokens.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
@@ -156,16 +155,20 @@
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoUtil64.dll" />
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJSON64.dll" />
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64.dll" />
+    <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64.dll" />
   </ItemGroup>
   <ItemGroup>
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoFoundation64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoUtil64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJSON64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64d.dll" />
+    <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64d.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UIDGenerator.h" />
-    <ClInclude Include="UserJWTokens.h" />
+    <ClInclude Include="BaseRequestHandler.h" />
+    <ClInclude Include="HandlerFactory.h" />
+    <ClInclude Include="HomeRequestHanler.h" />
+    <ClInclude Include="NotFoundHandler.h" />
   </ItemGroup>
   <Target Name="DeployPocoDlls" AfterTargets="Build">
     <Copy SourceFiles="@(PocoReleaseDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Release' And '$(Platform)' == 'x64' " />

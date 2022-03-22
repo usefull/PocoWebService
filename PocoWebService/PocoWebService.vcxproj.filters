@@ -18,15 +18,18 @@
     <ClCompile Include="Application.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="UserJWTokens.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UserJWTokens.h">
+    <ClInclude Include="HomeRequestHanler.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="UIDGenerator.h">
+    <ClInclude Include="HandlerFactory.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRequestHandler.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="NotFoundHandler.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
