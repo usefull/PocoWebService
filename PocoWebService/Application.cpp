@@ -1,6 +1,10 @@
 ﻿// PocoWebService.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 #include <iostream>
 
 #include "Poco/Net/HTTPServer.h"
@@ -66,4 +70,10 @@ protected:
 	}
 };
 
-POCO_SERVER_MAIN(Application)
+int main(int argc, char** argv)
+{
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+	Application app;
+	return app.run(argc, argv);
+}
