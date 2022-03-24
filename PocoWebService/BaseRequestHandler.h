@@ -7,17 +7,22 @@
 #include "Poco/JSON/Parser.h"
 #include "Poco/JSON/Object.h"
 
+#include "ErrorResponse.h"
+
 using Poco::Net::HTTPRequestHandler;
 using Poco::Net::HTTPServerRequest;
 using Poco::Net::HTTPServerResponse;
 using Poco::JSON::Parser;
 using Poco::JSON::Object;
 
+//static Object::Ptr NULL_OBJECT_PTR = 0;
+
 #define JSON_BODY(o, req, resp) const Object* tmp_##o; \
 	try { \
 		tmp_##o = getJsonBody(req); \
 	} catch (...) { \
-		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST); \
+		ErrorResponse err; \
+		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Request body is not a valid JSON object").get()); \
 		return; \
 	} \
 	const Object &o = *tmp_##o
@@ -25,7 +30,8 @@ using Poco::JSON::Object;
 #define GET_VALUE(obj, name, type, resp) try { \
 		obj.getValue<type>(#name); \
 	} catch (...) { \
-		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST); \
+		ErrorResponse err; \
+		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Required field not found").field(L#name).get()); \
 		return; \
 	} \
 	type name = obj.getValue<type>(#name)
@@ -33,10 +39,14 @@ using Poco::JSON::Object;
 class BaseRequestHandler : public HTTPRequestHandler
 {
 protected:
-	void sendStatus(HTTPServerResponse& response, HTTPServerResponse::HTTPStatus status)
+	void sendStatus(HTTPServerResponse& response, HTTPServerResponse::HTTPStatus status, Object::Ptr pMessage = 0)
 	{
+		response.setContentType("application/json");
 		response.setStatus(status);
-		response.send();
+		if (pMessage.isNull())
+			response.send();
+		else
+			pMessage->stringify(response.send());
 	}
 
 	inline const Object* getJsonBody(HTTPServerRequest& request)

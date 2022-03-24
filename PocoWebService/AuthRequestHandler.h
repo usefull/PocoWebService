@@ -21,7 +21,11 @@ public:
 		GET_VALUE(body, login, std::wstring, response);
 		GET_VALUE(body, pass, std::wstring, response);
 
+		Object::Ptr pMessage;
+		pMessage.assign(new Object());
+		pMessage->set("message", std::wstring(L"опа"));
+
 		std::ostream& ostr = response.send();
-		ostr << "This is auth";
+		ostr << "This is auth " << login.c_str();
 	}
 };

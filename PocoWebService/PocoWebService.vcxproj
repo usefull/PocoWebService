@@ -167,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="AuthRequestHandler.h" />
     <ClInclude Include="BaseRequestHandler.h" />
+    <ClInclude Include="ErrorResponse.h" />
     <ClInclude Include="HandlerFactory.h" />
     <ClInclude Include="HomeRequestHandler.h" />
     <ClInclude Include="NotFoundHandler.h" />
