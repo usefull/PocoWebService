@@ -37,3 +37,4 @@
 /.vs
 /PocoWebService/x64
 *.vcxproj.user
+/x64/Debug

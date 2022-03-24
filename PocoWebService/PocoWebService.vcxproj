@@ -162,6 +162,9 @@
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64d.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EnvFiles Include="$(ProjectDir)service.properties" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +174,17 @@
     <ClInclude Include="include\request_handlers\HandlerFactory.h" />
     <ClInclude Include="include\request_handlers\HomeRequestHandler.h" />
     <ClInclude Include="include\request_handlers\NotFoundHandler.h" />
+    <ClInclude Include="include\services\Configuration.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="service.properties">
+      <DeploymentContent>true</DeploymentContent>
+      <FileType>Text</FileType>
+    </None>
   </ItemGroup>
   <Target Name="DeployPocoDlls" AfterTargets="Build">
     <Copy SourceFiles="@(PocoReleaseDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Release' And '$(Platform)' == 'x64' " />
     <Copy SourceFiles="@(PocoDebugDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Debug' And '$(Platform)' == 'x64' " />
+    <Copy SourceFiles="@(EnvFiles)" DestinationFolder="$(OutDir)" />
   </Target>
 </Project>
