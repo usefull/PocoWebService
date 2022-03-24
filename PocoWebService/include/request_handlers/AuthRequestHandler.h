@@ -1,8 +1,6 @@
 #pragma once
 
 #include "BaseRequestHandler.h"
-#include "Poco/JSON/Parser.h"
-#include "Poco/JSON/Object.h"
 
 class AuthRequestHandler : public BaseRequestHandler
 {

@@ -1,42 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Исходные файлы">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Файлы ресурсов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{e5efae36-c7f9-479f-9bd7-a89d79d7a9b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{27e59fed-9184-4bf0-8025-e4eb20093c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dto">
+      <UniqueIdentifier>{fe4794ea-5dd1-43c3-ae36-c2af5fe58437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\request_handlers">
+      <UniqueIdentifier>{681ae4b7-52c8-4084-9b9b-2a855fb8e140}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HomeRequestHandler.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\dto\ErrorResponse.h">
+      <Filter>include\dto</Filter>
     </ClInclude>
-    <ClInclude Include="HandlerFactory.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\request_handlers\AuthRequestHandler.h">
+      <Filter>include\request_handlers</Filter>
     </ClInclude>
-    <ClInclude Include="BaseRequestHandler.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\request_handlers\BaseRequestHandler.h">
+      <Filter>include\request_handlers</Filter>
     </ClInclude>
-    <ClInclude Include="NotFoundHandler.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\request_handlers\HandlerFactory.h">
+      <Filter>include\request_handlers</Filter>
     </ClInclude>
-    <ClInclude Include="AuthRequestHandler.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\request_handlers\HomeRequestHandler.h">
+      <Filter>include\request_handlers</Filter>
     </ClInclude>
-    <ClInclude Include="ErrorResponse.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="include\request_handlers\NotFoundHandler.h">
+      <Filter>include\request_handlers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

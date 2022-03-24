@@ -1,21 +1,19 @@
 #pragma once
 
-#include "Poco/Net/HTTPRequestHandler.h"
-#include "Poco/Net/HTTPServerRequest.h"
-#include "Poco/Net/HTTPServerResponse.h"
-#include "Poco/Net/HTTPServerResponse.h"
-#include "Poco/JSON/Parser.h"
-#include "Poco/JSON/Object.h"
+#include <Poco/Net/HTTPRequestHandler.h>
+#include <Poco/Net/HTTPServerRequest.h>
+#include <Poco/Net/HTTPServerResponse.h>
+#include <Poco/Net/HTTPServerResponse.h>
+#include <Poco/JSON/Parser.h>
+#include <Poco/JSON/Object.h>
 
-#include "ErrorResponse.h"
+#include "dto/ErrorResponse.h"
 
 using Poco::Net::HTTPRequestHandler;
 using Poco::Net::HTTPServerRequest;
 using Poco::Net::HTTPServerResponse;
 using Poco::JSON::Parser;
 using Poco::JSON::Object;
-
-//static Object::Ptr NULL_OBJECT_PTR = 0;
 
 #define JSON_BODY(o, req, resp) const Object* tmp_##o; \
 	try { \

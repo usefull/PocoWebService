@@ -5,15 +5,13 @@
 #include <stdlib.h>
 #include <crtdbg.h>
 
-#include <iostream>
+#include <Poco/Net/HTTPServer.h>
+#include <Poco/Util/ServerApplication.h>
+#include <Poco/Util/OptionSet.h>
+#include <Poco/Net/HTTPServerParams.h>
+#include <Poco/Net/ServerSocket.h>
 
-#include "Poco/Net/HTTPServer.h"
-#include "Poco/Util/ServerApplication.h"
-#include "Poco/Util/OptionSet.h"
-#include "Poco/Net/HTTPServerParams.h"
-#include "Poco/Net/ServerSocket.h"
-
-#include "HandlerFactory.h"
+#include "request_handlers/HandlerFactory.h"
 
 using Poco::Util::ServerApplication;
 using Poco::Util::OptionSet;
