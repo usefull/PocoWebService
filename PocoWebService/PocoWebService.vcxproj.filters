@@ -51,6 +51,9 @@
     <ClInclude Include="include\services\Jwt.h">
       <Filter>include\services</Filter>
     </ClInclude>
+    <ClInclude Include="include\services\UserService.h">
+      <Filter>include\services</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties" />

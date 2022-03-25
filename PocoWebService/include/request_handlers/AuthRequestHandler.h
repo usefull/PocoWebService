@@ -1,6 +1,8 @@
 #pragma once
 
 #include "BaseRequestHandler.h"
+#include "services\Jwt.h"
+#include "services\UserService.h"
 
 class AuthRequestHandler : public BaseRequestHandler
 {
@@ -10,7 +12,7 @@ public:
 		if (request.getMethod() == "POST")
 			handlePost(request, response);
 		else
-			sendStatus(response, HTTPServerResponse::HTTPStatus::HTTP_METHOD_NOT_ALLOWED);
+			sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_METHOD_NOT_ALLOWED);
 	}
 
 	void handlePost(HTTPServerRequest& request, HTTPServerResponse& response)
@@ -19,11 +21,18 @@ public:
 		GET_VALUE(body, login, std::wstring, response);
 		GET_VALUE(body, pass, std::wstring, response);
 
+		int userId = UserService::authonticate(login, pass);
+		if (userId == 0)
+		{
+			sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_UNAUTHORIZED);
+			return;
+		}
+
 		Object::Ptr pMessage;
 		pMessage.assign(new Object());
-		pMessage->set("message", std::wstring(L"опа"));
+		pMessage->set("access", JWT::createAccessToken(userId));
+		pMessage->set("refresh", JWT::createRefreshToken(userId));
 
-		std::ostream& ostr = response.send();
-		ostr << "This is auth " << login.c_str();
+		sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_OK, pMessage);
 	}
 };

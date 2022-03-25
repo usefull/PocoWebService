@@ -45,6 +45,16 @@ public:
         return _pConf->getString("refreshTokenSecret");
     }
 
+    int accessTokenLifetime()
+    {
+        return _pConf->getInt("accessTokenLifetime", 10);
+    }
+
+    int refreshTokenLifetime()
+    {
+        return _pConf->getInt("refreshTokenLifetime", 60);
+    }
+
 protected:
     Configuration()
     {

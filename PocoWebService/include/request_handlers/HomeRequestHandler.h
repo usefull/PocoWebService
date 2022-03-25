@@ -25,7 +25,7 @@ public:
 		if (request.getMethod() == "GET")
 			handleGet(request, response);
 		else
-			sendStatus(response, HTTPServerResponse::HTTPStatus::HTTP_METHOD_NOT_ALLOWED);
+			sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_METHOD_NOT_ALLOWED);
 	}
 
 	void handleGet(HTTPServerRequest& request, HTTPServerResponse& response)

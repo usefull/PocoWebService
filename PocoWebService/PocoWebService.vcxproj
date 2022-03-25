@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\JWT\include;$(ProjectDir)..\poco-1.11.1\Crypto\include;$(ProjectDir)..\poco-1.11.1\openssl\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\JWT\include;$(ProjectDir)..\poco-1.11.1\Crypto\include;$(ProjectDir)..\poco-1.11.1\openssl\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\JWT\include;$(ProjectDir)..\poco-1.11.1\Crypto\include;$(ProjectDir)..\poco-1.11.1\openssl\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\poco-1.11.1\Foundation\include;$(ProjectDir)..\poco-1.11.1\Net\include;$(ProjectDir)..\poco-1.11.1\JSON\include;$(ProjectDir)..\poco-1.11.1\JWT\include;$(ProjectDir)..\poco-1.11.1\Crypto\include;$(ProjectDir)..\poco-1.11.1\openssl\include;$(ProjectDir)..\poco-1.11.1\Util\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,6 +153,10 @@
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJSON64.dll" />
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64.dll" />
     <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64.dll" />
+    <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJWT64.dll" />
+    <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoCrypto64.dll" />
+    <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\libcrypto.dll" />
+    <PocoReleaseDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\libssl.dll" />
   </ItemGroup>
   <ItemGroup>
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoFoundation64d.dll" />
@@ -160,6 +164,10 @@
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJSON64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoXML64d.dll" />
     <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoNet64d.dll" />
+    <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoJWT64d.dll" />
+    <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\PocoCrypto64d.dll" />
+    <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\libcryptod.dll" />
+    <PocoDebugDllx64 Include="$(ProjectDir)..\poco-1.11.1\bin64\libssld.dll" />
   </ItemGroup>
   <ItemGroup>
     <EnvFiles Include="$(ProjectDir)service.properties" />
@@ -176,6 +184,7 @@
     <ClInclude Include="include\request_handlers\NotFoundHandler.h" />
     <ClInclude Include="include\services\Configuration.h" />
     <ClInclude Include="include\services\Jwt.h" />
+    <ClInclude Include="include\services\UserService.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties">

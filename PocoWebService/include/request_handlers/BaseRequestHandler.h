@@ -20,7 +20,7 @@ using Poco::JSON::Object;
 		tmp_##o = getJsonBody(req); \
 	} catch (...) { \
 		ErrorResponse err; \
-		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Request body is not a valid JSON object").get()); \
+		sendResponse(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Request body is not a valid JSON object").get()); \
 		return; \
 	} \
 	const Object &o = *tmp_##o
@@ -29,7 +29,7 @@ using Poco::JSON::Object;
 		obj.getValue<type>(#name); \
 	} catch (...) { \
 		ErrorResponse err; \
-		sendStatus(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Required field not found").field(L#name).get()); \
+		sendResponse(resp, HTTPServerResponse::HTTPStatus::HTTP_BAD_REQUEST, err.message(L"Required field not found").field(L#name).get()); \
 		return; \
 	} \
 	type name = obj.getValue<type>(#name)
@@ -37,7 +37,7 @@ using Poco::JSON::Object;
 class BaseRequestHandler : public HTTPRequestHandler
 {
 protected:
-	void sendStatus(HTTPServerResponse& response, HTTPServerResponse::HTTPStatus status, Object::Ptr pMessage = 0)
+	void sendResponse(HTTPServerResponse& response, HTTPServerResponse::HTTPStatus status, Object::Ptr pMessage = 0)
 	{
 		response.setContentType("application/json");
 		response.setStatus(status);

@@ -11,6 +11,6 @@ public:
 
 	void handleRequest(HTTPServerRequest& request, HTTPServerResponse& response)
 	{
-		sendStatus(response, HTTPServerResponse::HTTPStatus::HTTP_NOT_FOUND);
+		sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_NOT_FOUND);
 	}
 };
