@@ -38,3 +38,4 @@
 /PocoWebService/x64
 *.vcxproj.user
 /x64/Debug
+/x64/Release
