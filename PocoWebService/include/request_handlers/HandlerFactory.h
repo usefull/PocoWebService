@@ -19,8 +19,6 @@ public:
 
 	HTTPRequestHandler* createRequestHandler(const HTTPServerRequest& request)
 	{
-		auto eee = request.getURI();
-
 		if (request.getURI() == "/")
 			return new HomeRequestHandler();
 		else if (Poco::toLower(request.getURI()) == "/auth")

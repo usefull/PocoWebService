@@ -175,6 +175,7 @@
     <ClInclude Include="include\request_handlers\HomeRequestHandler.h" />
     <ClInclude Include="include\request_handlers\NotFoundHandler.h" />
     <ClInclude Include="include\services\Configuration.h" />
+    <ClInclude Include="include\services\Jwt.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties">

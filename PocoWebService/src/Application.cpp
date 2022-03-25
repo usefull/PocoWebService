@@ -12,6 +12,7 @@
 #include <Poco/Net/ServerSocket.h>
 
 #include "request_handlers/HandlerFactory.h"
+#include "services/Configuration.h"
 
 using Poco::Util::ServerApplication;
 using Poco::Util::OptionSet;
@@ -48,16 +49,14 @@ protected:
 
 	int main(const ArgVec& args)
 	{
-		std::cout << "Poco web-service started" << std::endl;
+		std::cout << "Poco web-service started on port " << Configuration::Instance().port() << std::endl;
 
 		HTTPServerParams* pParams = new HTTPServerParams;
-		pParams->setMaxQueued(100);
-		pParams->setMaxThreads(4);
+		pParams->setMaxQueued(Configuration::Instance().maxQueued());
+		pParams->setMaxThreads(Configuration::Instance().maxThreads());
 
-		ServerSocket svs(9090);
-		
-		HTTPServer srv(new HandlerFactory(), svs, pParams);
-		
+		ServerSocket svs(Configuration::Instance().port());		
+		HTTPServer srv(new HandlerFactory(), svs, pParams);		
 		srv.start();
 		
 		waitForTerminationRequest();
