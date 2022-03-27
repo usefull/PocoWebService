@@ -60,6 +60,12 @@
     <ClInclude Include="include\dto\SampleResponse.h">
       <Filter>include\dto</Filter>
     </ClInclude>
+    <ClInclude Include="include\dto\BaseResponse.h">
+      <Filter>include\dto</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dto\AuthResponse.h">
+      <Filter>include\dto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties" />

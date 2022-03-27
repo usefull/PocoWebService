@@ -182,6 +182,8 @@
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\dto\AuthResponse.h" />
+    <ClInclude Include="include\dto\BaseResponse.h" />
     <ClInclude Include="include\dto\ErrorResponse.h" />
     <ClInclude Include="include\dto\SampleResponse.h" />
     <ClInclude Include="include\request_handlers\AuthRequestHandler.h" />

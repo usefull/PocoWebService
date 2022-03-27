@@ -1,17 +1,10 @@
 #pragma once
 
-#include <Poco/JSON/Object.h>
+#include "BaseResponse.h"
 
-using Poco::JSON::Object;
-
-class ErrorResponse
+class ErrorResponse : public BaseResponse
 {
 public:
-	ErrorResponse()
-	{
-		_pObj.assign(new Object());
-	}
-
 	ErrorResponse& message(const std::wstring& str)
 	{
 		_pObj->set("message", str);
@@ -29,12 +22,4 @@ public:
 		_pObj->set("details", str);
 		return *this;
 	}
-
-	Object::Ptr& get()
-	{
-		return _pObj;
-	}
-
-private:
-	Object::Ptr _pObj;
 };

@@ -3,6 +3,7 @@
 #include "BaseRequestHandler.h"
 #include "services\Jwt.h"
 #include "services\UserService.h"
+#include "dto\AuthResponse.h"
 
 class AuthRequestHandler : public BaseRequestHandler
 {
@@ -28,11 +29,14 @@ public:
 			return;
 		}
 
-		Object::Ptr pMessage;
-		pMessage.assign(new Object());
-		pMessage->set("access", JWT::createAccessToken(userId));
-		pMessage->set("refresh", JWT::createRefreshToken(userId));
+		AuthResponse message;
 
-		sendResponse(response, HTTPServerResponse::HTTPStatus::HTTP_OK, pMessage);
-	}
+		sendResponse(response,
+			HTTPServerResponse::HTTPStatus::HTTP_OK,
+			message
+				.access(JWT::createAccessToken(userId))
+				.refresh(JWT::createRefreshToken(userId))
+				.get()
+		);
+	}	
 };
