@@ -5,6 +5,7 @@
 #include "HomeRequestHandler.h"
 #include "NotFoundHandler.h"
 #include "AuthRequestHandler.h"
+#include "SampleRequestHandler.h"
 
 using Poco::Net::HTTPServerRequest;
 using Poco::Net::HTTPRequestHandler;
@@ -23,6 +24,8 @@ public:
 			return new HomeRequestHandler();
 		else if (Poco::toLower(request.getURI()) == "/auth")
 			return new AuthRequestHandler();
+		else if (Poco::toLower(request.getURI()) == "/sample")
+			return new SampleRequestHandler();
 		else
 			return new NotFoundHandler();
 	}

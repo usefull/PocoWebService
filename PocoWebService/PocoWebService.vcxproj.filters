@@ -54,6 +54,12 @@
     <ClInclude Include="include\services\UserService.h">
       <Filter>include\services</Filter>
     </ClInclude>
+    <ClInclude Include="include\request_handlers\SampleRequestHandler.h">
+      <Filter>include\request_handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dto\SampleResponse.h">
+      <Filter>include\dto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties" />

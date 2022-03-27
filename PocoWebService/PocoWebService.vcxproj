@@ -173,15 +173,23 @@
     <EnvFiles Include="$(ProjectDir)service.properties" />
   </ItemGroup>
   <ItemGroup>
+    <MsVCRDebugDllx64 Include="$(ProjectDir)..\msvcr\x64\msvcr120d.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <MsVCRReleaseDllx64 Include="$(ProjectDir)..\msvcr\x64\msvcr120.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\dto\ErrorResponse.h" />
+    <ClInclude Include="include\dto\SampleResponse.h" />
     <ClInclude Include="include\request_handlers\AuthRequestHandler.h" />
     <ClInclude Include="include\request_handlers\BaseRequestHandler.h" />
     <ClInclude Include="include\request_handlers\HandlerFactory.h" />
     <ClInclude Include="include\request_handlers\HomeRequestHandler.h" />
     <ClInclude Include="include\request_handlers\NotFoundHandler.h" />
+    <ClInclude Include="include\request_handlers\SampleRequestHandler.h" />
     <ClInclude Include="include\services\Configuration.h" />
     <ClInclude Include="include\services\Jwt.h" />
     <ClInclude Include="include\services\UserService.h" />
@@ -196,5 +204,7 @@
     <Copy SourceFiles="@(PocoReleaseDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Release' And '$(Platform)' == 'x64' " />
     <Copy SourceFiles="@(PocoDebugDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Debug' And '$(Platform)' == 'x64' " />
     <Copy SourceFiles="@(EnvFiles)" DestinationFolder="$(OutDir)" />
+    <Copy SourceFiles="@(MsVCRDebugDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Debug' And '$(Platform)' == 'x64' " />
+    <Copy SourceFiles="@(MsVCRReleaseDllx64)" DestinationFolder="$(OutDir)" Condition=" '$(Configuration)' == 'Release' And '$(Platform)' == 'x64' " />
   </Target>
 </Project>
