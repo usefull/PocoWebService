@@ -12,3 +12,4 @@ For a successful linking and executing you need to unpack following zip-files in
  - poco-1.11.1\lib64\lib64_lib3.zip
  - poco-1.11.1\lib64\lib64_lib4.zip
  - poco-1.11.1\lib64\lib64_pdb.zip
+ - msvcr\x64\x64.zip
