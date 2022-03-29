@@ -45,14 +45,14 @@ public:
         return _pConf->getString("refreshTokenSecret");
     }
 
-    int accessTokenLifetime()
+    Poco::UInt64 accessTokenLifetime()
     {
-        return _pConf->getInt("accessTokenLifetime", 10);
+        return _pConf->getUInt64("accessTokenLifetime", 10);
     }
 
-    int refreshTokenLifetime()
+    Poco::UInt64 refreshTokenLifetime()
     {
-        return _pConf->getInt("refreshTokenLifetime", 60);
+        return _pConf->getUInt64("refreshTokenLifetime", 60);
     }
 
 protected:

@@ -18,6 +18,7 @@ public:
 	static std::string createAccessToken(int userId)
 	{
 		Timestamp now;
+		Timestamp rrr = now + (Configuration::Instance().accessTokenLifetime() * 60 * 1000000);
 		
 		Token token;
 		token.setType("JWT");
@@ -41,11 +42,32 @@ public:
 		return signer.sign(token, Signer::ALGO_HS256);
 	}
 
-	static int validateToken(std::string& jwt)
+	static int validateAccessToken(std::string& jwt)
 	{
 		try
 		{
 			Signer signer(Configuration::Instance().accessTokenSecret());
+			Token token = signer.verify(jwt);
+			Timestamp now;
+			if (now > token.getExpiration())
+				return 0;
+			int userId;
+			if (Poco::strToInt(token.getId(), userId, 10))
+				return userId;
+			else
+				return 0;			
+		}
+		catch (...)
+		{
+			return 0;
+		}
+	}
+
+	static int validateRefreshToken(std::string& jwt)
+	{
+		try
+		{
+			Signer signer(Configuration::Instance().refreshTokenSecret());
 			Token token = signer.verify(jwt);
 			Timestamp now;
 			if (now > token.getExpiration())

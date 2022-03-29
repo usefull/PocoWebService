@@ -191,6 +191,7 @@
     <ClInclude Include="include\request_handlers\HandlerFactory.h" />
     <ClInclude Include="include\request_handlers\HomeRequestHandler.h" />
     <ClInclude Include="include\request_handlers\NotFoundHandler.h" />
+    <ClInclude Include="include\request_handlers\RefreshRequestHandler.h" />
     <ClInclude Include="include\request_handlers\SampleRequestHandler.h" />
     <ClInclude Include="include\services\Configuration.h" />
     <ClInclude Include="include\services\Jwt.h" />

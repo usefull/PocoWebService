@@ -66,6 +66,9 @@
     <ClInclude Include="include\dto\AuthResponse.h">
       <Filter>include\dto</Filter>
     </ClInclude>
+    <ClInclude Include="include\request_handlers\RefreshRequestHandler.h">
+      <Filter>include\request_handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="service.properties" />

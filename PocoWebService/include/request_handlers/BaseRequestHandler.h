@@ -76,7 +76,7 @@ protected:
 		}
 
 		std::string jwt = request["Authorization"].substr(7);
-		userId = JWT::validateToken(jwt);
+		userId = JWT::validateAccessToken(jwt);
 		if (userId == 0)
 		{
 			ErrorResponse err;
